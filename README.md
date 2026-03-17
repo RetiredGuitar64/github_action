@@ -5,8 +5,9 @@
 ### workflow
 - 每一个.yml就是一个workflow, workflow包含了他触发所需要的event, 还有这个workflow会运行什么jobs, 等等所有内容
 
-### Event
-- 每个workflow可以有单个或多个workflow去trigger, 也可以手动触发
+### Events
+- 每个workflow可以有单个或多个event去trigger, 也可以手动触发
+- event可以是push, pr, issue或者其他job或workflow的结果,或依赖
 
 ### Jobs
 - workflow中包含很多个jobs, 相当于是要做的工作, 目标, 可以是 init环境,跑test, 或者deploy, 都是个job
