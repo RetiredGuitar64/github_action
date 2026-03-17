@@ -11,7 +11,8 @@
 
 ### Jobs
 - workflow中包含很多个jobs, 相当于是要做的工作, 目标, 可以是 init环境,跑test, 或者deploy, 都是个job
-- 每一个job都可以跑在一个单独的runner, 就是一个真机环境, 或者容器
+- 每一个job都跑在一个单独的runner, 就是一个真机环境, 或者容器
+- 多个job可以在多个runner中顺序进行,或者并行,
 
 ### Steps
 - 每个job又由很多step构成,比如执行shell命令, 安装软件环境
