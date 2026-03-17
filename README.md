@@ -25,3 +25,38 @@
 ### Runners
 - 这个就是运行job时候的环境, github提供ubunutu, windows和mac
 - 也可以用自己的runner
+
+
+
+## 例子
+
+name: Crystal CI
+
+```yaml
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    container:
+      image: crystallang/crystal
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Install dependencies
+      run: shards install
+    - name: Run tests
+      run: crystal spec
+
+```
+
+
+step里面有一个必要的步骤, 
+`- use: actions/checkout@v4`
+这个是官方配置的actions, 用来把代码checkout到runner中
